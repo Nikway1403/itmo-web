@@ -1,4 +1,3 @@
-
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -11,24 +10,23 @@ h1 {
     color: orange;
 }
 
-header {
+.header {
     background-color: #333;
     padding: 15px;
     text-align: center;
 }
 
-header nav ul {
+.header_list {
     list-style: none;
     padding: 0;
     margin: 0;
 }
-
-header nav ul li {
+.header_item {
     display: inline-block;
     margin: 0 15px;
 }
 
-header nav ul li a {
+.header_link {
     color: white;
     text-decoration: none;
     font-weight: bold;
@@ -64,7 +62,7 @@ main {
     text-align: right;
 }
 
-.welcome-image img {
+.welcome-image__img {
     max-width: 300px;
     height: auto;
     border-radius: 10px;
@@ -93,23 +91,23 @@ main {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
 }
-.ascii pre {
+.ascii_pre {
     display: flex;
     justify-content: center;
 }
 
-footer {
+.footer {
     background-color: #333;
     color: white;
     text-align: center;
     padding: 20px 0;
 }
 
-footer a {
+.footer_paragraph_link {
     color: white;
     text-decoration: none;
 }
 
-footer a:hover {
+.footer_paragraph_link:hover {
     text-decoration: underline;
 }
