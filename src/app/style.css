@@ -11,7 +11,7 @@ h1 {
 }
 
 .header {
-    position: absolute;
+    position: fixed;
     align-items: center; /*Алайн не работает при абсолюном?*/
     top: 0;
     left: 0;
@@ -25,20 +25,30 @@ h1 {
     text-align: center;
 
 }*/
-.header_list {
+.header__list {
     list-style: none;
     padding: 0;
     margin: 0;
 }
-.header_item {
+.header__item {
     display: inline-block;
     margin: 0 15px;
 }
 
-.header_link {
+.header__link {
     color: white;
     text-decoration: none;
     font-weight: bold;
+}
+.header__link:hover {
+    text-decoration: underline;
+}
+
+.header__load-time {
+    color: white;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 10px;
 }
 
 main {
@@ -101,7 +111,7 @@ main {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
 }
-.ascii_pre {
+.ascii__pre {
     display: flex;
     justify-content: center;
 }
@@ -113,13 +123,37 @@ main {
     padding: 20px 0;
 }
 
-.footer_paragraph_link {
+.footer__paragraph__link {
     color: white;
     text-decoration: none;
 }
 
-.footer_paragraph_link:hover {
+.footer__paragraph__link:hover {
     text-decoration: underline;
+}
+
+.header__item--active .header__link {
+    background-color: blue;
+    color: white;
+}
+
+.header__item .header__link:hover {
+    background-color: #777;
+    color: white;
+}
+
+.header__item--active .header__link {
+    position: relative;
+}
+
+.header__item--active .header__link::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: white;
 }
 
 
@@ -134,13 +168,13 @@ main {
         margin-top: 20px;
     }
 
-    .header_list {
+    .header__list {
         display: flex;
         align-items: center;
         justify-content:center;
     }
 
-    .header_item {
+    .header__item {
         margin-bottom: 10px;
     }
 }
