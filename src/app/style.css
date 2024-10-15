@@ -74,7 +74,9 @@ main {
 
 .welcome-text {
     flex: 1;
-    text-align: left;
+    text-decoration: overline;
+    text-align: center; 
+    text-transform: uppercase;
 }
 
 .welcome-image {
@@ -122,6 +124,7 @@ main {
     text-align: center;
     padding: 20px 0;
 }
+
 
 .footer__paragraph__link {
     color: white;
