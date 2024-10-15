@@ -12,7 +12,7 @@ h1 {
 
 .header {
     position: fixed;
-    align-items: center; /*Алайн не работает при абсолюном?*/
+    justify-content: center; /*Алайн не работает при абсолюном?*/
     top: 0;
     left: 0;
     width: 100%;
