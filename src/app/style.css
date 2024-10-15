@@ -11,8 +11,8 @@ h1 {
 }
 
 .header {
-    position: absolute;
-    align-items: center; /*Алайн не работает при абсолюном?*/
+    position: fixed;
+    justify-content: center; /*Алайн не работает при абсолюном?*/
     top: 0;
     left: 0;
     width: 100%;
@@ -25,17 +25,17 @@ h1 {
     text-align: center;
 
 }*/
-.header_list {
+.header__list {
     list-style: none;
     padding: 0;
     margin: 0;
 }
-.header_item {
+.header__item {
     display: inline-block;
     margin: 0 15px;
 }
 
-.header_link {
+.header__link {
     color: white;
     text-decoration: none;
     font-weight: bold;
@@ -64,7 +64,9 @@ main {
 
 .welcome-text {
     flex: 1;
-    text-align: left;
+    text-decoration: overline;
+    text-align: center; 
+    text-transform: uppercase;
 }
 
 .welcome-image {
@@ -101,7 +103,7 @@ main {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
 }
-.ascii_pre {
+.ascii__pre {
     display: flex;
     justify-content: center;
 }
@@ -113,12 +115,12 @@ main {
     padding: 20px 0;
 }
 
-.footer_paragraph_link {
+.footer__paragraph_link {
     color: white;
     text-decoration: none;
 }
 
-.footer_paragraph_link:hover {
+.footer__paragraph_link:hover {
     text-decoration: underline;
 }
 
@@ -134,13 +136,13 @@ main {
         margin-top: 20px;
     }
 
-    .header_list {
+    .header__list {
         display: flex;
         align-items: center;
         justify-content:center;
     }
 
-    .header_item {
+    .header__item {
         margin-bottom: 10px;
     }
 }

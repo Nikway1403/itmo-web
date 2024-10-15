@@ -11,17 +11,17 @@ body {
     text-align: center;
 }
 
-.header_list {
+.header__list {
     list-style: none;
     padding: 0;
     margin: 0;
 }
-.header_item {
+.header__item {
     display: inline-block;
     margin: 0 15px;
 }
 
-.header_link {
+.header__link {
     color: white;
     text-decoration: none;
     font-weight: bold;
@@ -44,30 +44,30 @@ body {
     border-collapse: collapse;
 }
 
-.table_header-cell {
+.table__header-cell {
     padding: 10px;
     text-align: left;
     border: 1px solid #ddd;
     font-size: 16px;
 }
-.table_cell {
+.table__cell {
     padding: 10px;
     text-align: left;
     border: 1px solid #ddd;
     font-size: 16px;
 }
 
-.table_header-cell {
+.table__header-cell {
     background-color: #f4f4f4;
     font-weight: bold;
     white-space: nowrap;
 }
 
-.table_row:nth-child(even) {
+.table__row:nth-child(even) {
     background-color: #f9f9f9;
 }
 
-.table_row:nth-child(odd) {
+.table__row:nth-child(odd) {
     background-color: #fff;
 }
 
@@ -76,11 +76,11 @@ body {
         grid-template-columns: 1fr;
     }
 
-    .header_list {
+    .header__list {
         flex-direction: column;
     }
 
-    .header_item {
+    .header__item {
         margin-bottom: 10px;
     }
 }
