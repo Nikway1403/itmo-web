@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             for (let j = 0; j < days; j++) {
                 const cell = document.createElement('td');
-                cell.textContent = ''; // Содержимое ячеек оставляем пустыми
+                cell.textContent = '';
                 row.appendChild(cell);
             }
             table.appendChild(row);
