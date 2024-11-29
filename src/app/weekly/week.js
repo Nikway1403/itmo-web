@@ -4,27 +4,29 @@ document.addEventListener('DOMContentLoaded', function () {
 
     form.addEventListener('submit', function (event) {
         event.preventDefault();
-        generateTable();
-        saveFormData();
+
+        const form = new FormData(event.target);
+        const days = form.get('days');
+        const maxClasses = form.get('maxClasses');
+        const lang = form.get('language');
+        generateTable(days, maxClasses, lang);
+        saveFormData(days, maxClasses, lang);
     });
 
-    function generateTable() {
-
-        const days = document.getElementById('days').value;
-        const maxClasses = document.getElementById('maxClasses').value;
-        const language = document.getElementById('language').value;
+    function generateTable(days, maxClasses, lang) {
+        tableContainer.innerHTML = '';
 
         const table = document.createElement('table');
         table.classList.add('schedule-table');
         const topCorner = document.createElement('th');
         topCorner.setAttribute('rowspan', '1');
-        topCorner.textContent = (language === 'ru') ? 'Занятия' : 'Classes';
+        topCorner.textContent = (lang === 'ru') ? 'Занятия' : 'Classes';
 
         const headerRow = document.createElement('tr');
         headerRow.appendChild(topCorner);
         for (let i = 1; i <= days; i++) {
             const dayHeader = document.createElement('th');
-            dayHeader.textContent = (language === 'ru') ? `День ${i}` : `Day ${i}`;
+            dayHeader.textContent = (lang === 'ru') ? `День ${i}` : `Day ${i}`;
             headerRow.appendChild(dayHeader);
         }
         table.appendChild(headerRow);
@@ -46,12 +48,8 @@ document.addEventListener('DOMContentLoaded', function () {
         tableContainer.appendChild(table);
     }
 
-    function saveFormData() {
-        const formData = {
-            days: document.getElementById('days').value,
-            maxClasses: document.getElementById('maxClasses').value,
-            language: document.getElementById('language').value
-        };
+    function saveFormData(days, maxClasses, lang) {
+        const formData = { days, maxClasses, lang };
         localStorage.setItem('scheduleFormData', JSON.stringify(formData));
     }
 
@@ -59,6 +57,8 @@ document.addEventListener('DOMContentLoaded', function () {
         const savedData = localStorage.getItem('scheduleFormData');
         if (savedData) {
             const formData = JSON.parse(savedData);
+            generateTable(formData.days, formData.maxClasses, formData.lang);
+
             document.getElementById('days').value = formData.days;
             document.getElementById('maxClasses').value = formData.maxClasses;
             document.getElementById('language').value = formData.language;

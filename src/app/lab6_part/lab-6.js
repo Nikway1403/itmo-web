@@ -8,14 +8,11 @@ document.addEventListener('DOMContentLoaded', function () {
             preloader.style.display = 'block';
             content.style.display = 'none';
             errorMessage.style.display = 'none';
+            let flag = false;
 
             const randomFilter = Math.random() > 0.5 ? 'id_gte=100' : 'id_lte=200';
+
             const response = await fetch(`https://jsonplaceholder.typicode.com/comments?${randomFilter}`);
-
-            if (!response.ok) {
-                throw new Error('Ошибка');
-            }
-
             const data = await response.json();
 
             preloader.style.display = 'none';
